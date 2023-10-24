@@ -2,6 +2,7 @@
 #define FLUID_H
 
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 /*
 	Note:
@@ -21,6 +22,9 @@ public:
 
 	// Draws the "cell" grid
 	void draw(sf::RenderWindow& window);
+
+	// Adds velocity to a specified location
+	void add_vel(int x, int y, int vel_x, int vel_y);
 protected:
 private:
 
@@ -63,6 +67,11 @@ private:
 	// Converts a coordinate to 1D array index
 	int to_index(int x, int y);
 
+	// Converts a screen coordinate to a grid coordinate
+	sf::Vector2i screen_to_grid(int x, int y);
+
+	// Clamps a vector
+	void clamp(sf::Vector2i& vec, int x_min, int x_max, int y_min, int y_max);
 };
 
 #endif // FLUID_H
