@@ -1,0 +1,10 @@
+FileContentIndex
+v17
+bin
+doc
+SFML
+x64
+*.vcxproj
+*.filters
+*.user
+*.sln
